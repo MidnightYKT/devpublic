@@ -1,128 +1,152 @@
-.Navbar {
-  height: 60px;
+.navbar {
+  background: #1c2237;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background: black;
+  height: 80px;
 }
 
-.imgLogo {
-  width: 50px;
-  height: 50px;
-  margin-left: 5%;
-}
-
-.Navbar > .nav-logo {
-  font-weight: 700;
-  font-size: 21px;
-  margin: 15px;
-  color: white;
-}
-
-.nav-items {
-  margin-right: 5%;
-}
-
-.Navbar > .nav-items > a {
-  color: white;
-  font-size: 16px;
-  text-decoration: none;
-  margin: 15px;
-  position: relative;
-  opacity: 0.9;
-}
-
-.Navbar > .nav-items > a:hover {
-  opacity: 1;
-}
-
-.Navbar > .nav-items > a::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background: white;
-  transform: all 0.45s;
-}
-
-.Navbar > .nav-items > a:hover::before {
+.container {
+  z-index: 1;
   width: 100%;
+  max-width: 1300px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 50px;
+  padding-left: 50px;
 }
 
-.Navbar > .nav-toggle {
+.navbar-logo {
+  color: #fff;
+  justify-self: start;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-icon {
+  margin-right: 0.5rem;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  text-align: center;
+}
+
+.nav-item {
+  height: 80px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-item:hover {
+  border-bottom: 2px solid #f00946;
+}
+
+.nav-links {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  height: 100%;
+}
+
+.fa-bars {
+  color: #fff;
+}
+
+.menu-icon {
   display: none;
 }
 
-@media (max-width: 700px) {
-  .Navbar > .nav-items {
-    position: absolute;
-    top: 60px;
+@media screen and (max-width: 960px) {
+  .NavbarItems {
+    position: relative;
+  }
+
+  .nav-menu {
     display: flex;
     flex-direction: column;
-    background-color: black;
-    left: 0;
     width: 100%;
-    transform: translateX(-100%);
-    transition: all 0.45s;
+    height: 90vh;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
   }
 
-  .Navbar > .nav-items > a::before {
-    background: transparent;
+  .nav-menu.active {
+    background: #1c2237;
+    left: 0;
+    opacity: 1;
+    transition: all 0.6s ease;
+    z-index: 1;
   }
 
-  .Navbar > .nav-items.open {
-    transform: translateX(0);
+  .nav-links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
   }
 
-  .Navbar > .nav-toggle {
-    display: flex;
-    width: 50px;
-    height: 50px;
-    align-items: center;
-    justify-content: center;
+  .nav-links:hover {
+    color: #f00946;
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+  }
+
+  .nav-item:hover {
+    border: none;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .navbar-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(25%, 50%);
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
     cursor: pointer;
   }
 
-  .nav-toggle > .bar {
-    position: relative;
-    width: 32px;
-    height: 2px;
-    background: white;
-    transition: all 0.45s ease-in-out;
+  .fa-times {
+    color: #fff;
+    font-size: 2rem;
   }
 
-  .nav-toggle > .bar::before,
-  .nav-toggle > .bar::after {
-    content: "";
-    position: absolute;
-    height: 2px;
-    background: white;
-    border-radius: 2px;
-    transition: all 0.45s ease-in-out;
-  }
-
-  .nav-toggle > .bar::before {
-    width: 32px;
-    transform: translateY(-8px);
-  }
-
-  .nav-toggle > .bar::after {
-    width: 32px;
-    transform: translateY(8px);
-  }
-
-  .nav-toggle.open > .bar {
-    transform: translateX(-40px);
-    background: transparent;
-  }
-
-  .nav-toggle.open > .bar::before {
-    width: 32px;
-    transform: rotate(45deg) translate(26px, -26px);
-  }
-  .nav-toggle.open > .bar::after {
-    transform: rotate(-45deg) translate(26px, 26px);
+  .nav-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 120px;
   }
 }
