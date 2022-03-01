@@ -8,8 +8,8 @@ export const homeObjOne = {
       'Получите доступ к нашей эксклюзивной бриллиантовой карте, которая позволяет отправлять неограниченное количество транзакций без взимания каких-либо комиссий.',
     buttonLabel: 'Начни сейчас',
     imgStart: '',
-    img: 'images/svg-1.svg',
-    alt: 'Credit Card'
+    img: "images/content.svg",
+    alt: 'Credit'
   };
   
   export const homeObjTwo = {
@@ -22,7 +22,7 @@ export const homeObjOne = {
       'Мы обеспечим вас независимо от того, где вы находитесь. Более 140 мест по всему миру, чтобы обеспечить вам доступ в любое время',
     buttonLabel: 'Читать',
     imgStart: '',
-    img: 'images/svg-5.svg',
+    img: 'images/content2.svg',
     alt: 'Vault'
   };
   
